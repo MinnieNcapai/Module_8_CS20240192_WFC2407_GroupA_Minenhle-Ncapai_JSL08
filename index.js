@@ -10,15 +10,12 @@ class BankBranch {
         this.branchName = branchName;
         this.branchAddress = branchAddress;
         }
+        //Method to return information
+        getBranchInfo() {
+            return `Branch Name: ${this.branchName}, Branch Address: ${this.branchAddress}`;
+          }
+        
    }
-
- 
-//Method to return information
-getBranchInfo() {
-    return `Branch Name: ${this.branchName}, Branch Address: ${this.branchAddress}`;
-    }
-
-
    
    // 3. Create a function to return the single bank branch instance. // If it doesn't exist, create and save it. 
    function getBankBranchInstance(branchName, branchAddress) {
@@ -30,7 +27,19 @@ getBranchInfo() {
         // Return the singleton instance
         return bankBranchInstance;
         }
-        
+
+       // Get the singleton instance for branchA and branchB
+   const branchA = getBankBranchInstance ('branchA',  '14 Walnut dr' )
+   const branchB = getBankBranchInstance( 'branchB',  '123 Main')
+   
+
+   // Log the information for branchA and branchB
+   console.log(branchA.getBranchInfo());
+   console.log(branchB.getBranchInfo()); // Display branchA info (same instance)
+
+   // Check if branchA and branchB are the same instance
+   console.log(branchA===branchB) //display: true
+
 
 
 
