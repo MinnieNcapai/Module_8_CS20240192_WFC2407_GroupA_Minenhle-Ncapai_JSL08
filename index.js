@@ -12,6 +12,34 @@ class BankBranch {
         }
    }
 
+ 
+//Method to return information
+getBranchInfo() {
+    return `Branch Name: ${this.branchName}, Branch Address: ${this.branchAddress}`;
+    }
+
+
+   
+   // 3. Create a function to return the single bank branch instance. // If it doesn't exist, create and save it. 
+   function getBankBranchInstance(branchName, branchAddress) {
+    // Check if the instance already exists
+    if (bankBranchInstance === null) {
+      // otherwise, create and save a new instance.
+        bankBranchInstance = new BankBranch(branchName, branchAddress);
+        }
+        // Return the singleton instance
+        return bankBranchInstance;
+        }
+        
+
+
+
+
+
+
+
+
+
 // 3. In the `BankBranch` class:
 //    - Create a constructor that takes `branchInfo` as a parameter.
 //    - Inside the constructor, check if the `bankBranchInstance` variable is null (indicating no instance exists).
